@@ -24,6 +24,7 @@ class HelloControllerTests {
         val entity: HttpEntity<Any> = HttpEntity<Any>(headers)
         val response: ResponseEntity<String> = restTemplate.exchange(url, HttpMethod.GET, entity, String::class.java)
         Assertions.assertThat(response.statusCode).isEqualTo(HttpStatus.OK)
+        Assertions.assertThat(response.body).isEqualTo("Hello World")
     }
 
 }
